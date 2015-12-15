@@ -2,6 +2,7 @@ package com.base;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -13,6 +14,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.alibaba.fastjson.JSON;
+import com.common.Constant;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.assist.ImageScaleType;
 
@@ -40,7 +43,6 @@ public class BaseFragment extends Fragment {
 
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        initBar();
         initImageLoder();
     }
 
@@ -68,8 +70,8 @@ public class BaseFragment extends Fragment {
         toolbar = (Toolbar) viewGroup.findViewById(R.id.toolbar);
         toolbar.setTitle("标题");
         toolbar.setTitleTextColor(getResources().getColor(R.color.app_light));
-        toolbar.setBackgroundColor(Color.parseColor("#000000"));
-        toolbar.setNavigationIcon(R.mipmap.ic_launcher);//左边图标
+        toolbar.setBackgroundColor(Color.parseColor(Constant.COLOR_BAR));
+        toolbar.setNavigationIcon(R.mipmap.ic_launcher);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 getActivity().finish();
@@ -88,5 +90,16 @@ public class BaseFragment extends Fragment {
             toast.setText(string);
         }
         toast.show();
+    }
+
+    protected void StartActivity(Class<?> cls) {
+        Intent intent = new Intent(context, cls);
+        startActivity(intent);
+    }
+
+    protected void StartActivity(Class<?> cls, Bundle bundle) {
+        Intent intent = new Intent(context, cls);
+        intent.putExtras(bundle);
+        startActivity(intent);
     }
 }

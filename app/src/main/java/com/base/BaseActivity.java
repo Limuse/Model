@@ -1,6 +1,7 @@
 package com.base;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -11,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.common.Constant;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.assist.ImageScaleType;
 
@@ -36,12 +38,12 @@ public class BaseActivity extends FragmentActivity {
     public void setView(int layoutId, Boolean isShowBar) {
         if (isShowBar) {
             viewGroup = (ViewGroup) getLayoutInflater().inflate(R.layout.activity_base, null);
-            View v=getLayoutInflater().inflate(layoutId,viewGroup,false);
+            View v = getLayoutInflater().inflate(layoutId, viewGroup, false);
             viewGroup.addView(v);
             setContentView(viewGroup);
             initBar();
         } else {
-            viewGroup= (ViewGroup) getLayoutInflater().inflate(layoutId, null);
+            viewGroup = (ViewGroup) getLayoutInflater().inflate(layoutId, null);
             setContentView(viewGroup);
         }
     }
@@ -58,8 +60,8 @@ public class BaseActivity extends FragmentActivity {
         toolbar = (Toolbar) viewGroup.findViewById(R.id.toolbar);
         toolbar.setTitle("标题");
         toolbar.setTitleTextColor(getResources().getColor(R.color.app_light));
-        toolbar.setBackgroundColor(Color.parseColor("#000000"));
-        toolbar.setNavigationIcon(R.mipmap.ic_launcher);//左边图标
+        toolbar.setBackgroundColor(Color.parseColor(Constant.COLOR_BAR));
+        toolbar.setNavigationIcon(R.mipmap.ic_launcher);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 finish();
@@ -80,4 +82,14 @@ public class BaseActivity extends FragmentActivity {
         toast.show();
     }
 
+    protected void StartActivity(Class<?> cls) {
+        Intent intent = new Intent(context, cls);
+        startActivity(intent);
+    }
+
+    protected void StartActivity(Class<?> cls,Bundle bundle) {
+        Intent intent = new Intent(context, cls);
+        intent.putExtras(bundle);
+        startActivity(intent);
+    }
 }

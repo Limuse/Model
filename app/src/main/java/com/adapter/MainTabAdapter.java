@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import com.common.Constant;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -22,11 +23,29 @@ import huisou.model.R;
 public class MainTabAdapter extends BaseAdapter {
     private Context context;
     private List<Map<String, String>> list;
-
+    private List<Boolean> isChecd = new ArrayList<>();
 
     public MainTabAdapter(Context context, List<Map<String, String>> list) {
         this.context = context;
         this.list = list;
+        for (int i = 0; i < 5; i++) {
+            if (i == 0) {
+                isChecd.add(i, true);
+            } else {
+                isChecd.add(i, false);
+            }
+        }
+    }
+
+    public void setChecdIndex(int index){
+        for (int i = 0; i < 5; i++) {
+            if (i == index) {
+                isChecd.add(i, true);
+            } else {
+                isChecd.add(i, false);
+            }
+        }
+        notifyDataSetChanged();
     }
 
     @Override
@@ -56,12 +75,11 @@ public class MainTabAdapter extends BaseAdapter {
         } else {
             viewHolder = (ViewHolder) convertView.getTag();
         }
-        if(position==0){
-            convertView.setBackgroundColor(Color.parseColor(Constant.COLOR_TAB_PRESS));
+        if(isChecd.get(position)){
+            viewHolder.imageView.setImageResource(R.mipmap.mainp);
         }else {
-            convertView.setBackgroundColor(Color.parseColor(Constant.COLOR_TAB_DEFAULT));
+            viewHolder.imageView.setImageResource(R.mipmap.mainn);
         }
-        viewHolder.imageView.setImageResource(R.mipmap.ic_launcher);
         return convertView;
     }
 

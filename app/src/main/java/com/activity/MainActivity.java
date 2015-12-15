@@ -30,7 +30,7 @@ public class MainActivity extends BaseActivity {
     private Fragment[] fragments;
     private NoScrollGridView gridView;
     private String hideTag;
-
+    private MainTabAdapter adapter;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setView(R.layout.activity_main,false);
@@ -44,11 +44,8 @@ public class MainActivity extends BaseActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 if (hideTag.equals(position+""))
                     return;
-                for (int i=0;i<gridView.getChildCount();i++){
-                    gridView.getChildAt(i).setBackgroundColor(Color.parseColor(Constant.COLOR_TAB_DEFAULT));
-                }
-                view.setBackgroundColor(Color.parseColor(Constant.COLOR_TAB_PRESS));
-                switchFragment( fragments[position], position+"");
+                adapter.setChecdIndex(position);
+                switchFragment(fragments[position], position + "");
         }
         });
     }
@@ -62,7 +59,7 @@ public class MainActivity extends BaseActivity {
         gridView=(NoScrollGridView)findViewById(R.id.gridView);
         gridView.setNumColumns(Constant.TAB_Number);
         List<Map<String,String>>list=new ArrayList<>();
-        MainTabAdapter adapter=new MainTabAdapter(context,list);
+         adapter=new MainTabAdapter(context,list);
         gridView.setAdapter(adapter);
     }
 

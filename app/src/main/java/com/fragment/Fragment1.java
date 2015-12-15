@@ -6,6 +6,9 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.base.BaseFragment;
+import com.common.Http;
+import com.loopj.android.http.RequestParams;
+import com.nostra13.universalimageloader.core.ImageLoader;
 
 import huisou.model.R;
 

@@ -1,6 +1,7 @@
 <resources>
     <dimen name="app_viewcard">0.5dp</dimen>
     <dimen name="app_lycard">20dp</dimen>
+    <dimen name="app_tab">18sp</dimen>
     <dimen name="app_text_small">12sp</dimen>
     <dimen name="app_text_normal">14sp</dimen>
     <dimen name="app_text_big">16sp</dimen>

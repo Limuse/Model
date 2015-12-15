@@ -12,8 +12,8 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:background="#ffffff"
+        android:layout_height="@dimen/app_tab"
+        android:background="#f8f8f8"
         android:paddingBottom="1dp"
         android:paddingTop="1dp">
 
@@ -26,6 +26,7 @@
             android:focusable="false"
             android:focusableInTouchMode="false"
             android:horizontalSpacing="0.8dp"
+            android:listSelector="@android:color/transparent"
             android:numColumns="5"
             android:overScrollMode="never"
             android:verticalSpacing="0.8dp"></com.custom.NoScrollGridView>
