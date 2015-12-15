@@ -10,6 +10,10 @@ import android.widget.AdapterView;
 import android.widget.GridView;
 
 import com.adapter.MainTabAdapter;
+import com.baidu.location.BDLocation;
+import com.baidu.location.BDLocationListener;
+import com.baidu.location.LocationClient;
+import com.baidu.location.LocationClientOption;
 import com.base.BaseActivity;
 import com.common.Constant;
 import com.common.Init;
@@ -31,35 +35,54 @@ public class MainActivity extends BaseActivity {
     private NoScrollGridView gridView;
     private String hideTag;
     private MainTabAdapter adapter;
+
+
+    private LocationClient mLocClient;
+    private LocationClientOption option = new LocationClientOption();
+    private LocationListenner locationListenner = new LocationListenner();
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setView(R.layout.activity_main,false);
+        setView(R.layout.activity_main, false);
         initView();
         initData();
         initClick();
+
+        location();
+    }
+
+    private void location() {
+        mLocClient = new LocationClient(getApplicationContext());
+        mLocClient.registerLocationListener(locationListenner);
+        option.setOpenGps(true);
+        option.setAddrType("all");
+        option.setCoorType("bd09ll");
+        option.setScanSpan(5000);
+        mLocClient.setLocOption(option);
+        mLocClient.start();
     }
 
     private void initClick() {
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                if (hideTag.equals(position+""))
+                if (hideTag.equals(position + ""))
                     return;
                 adapter.setChecdIndex(position);
                 switchFragment(fragments[position], position + "");
-        }
+            }
         });
     }
 
     private void initData() {
-        fragments= Init.setHomeFragment(Constant.TAB_Number);
-        switchFragment(fragments[0], 0+"");
+        fragments = Init.setHomeFragment(Constant.TAB_Number);
+        switchFragment(fragments[0], 0 + "");
     }
 
     private void initView() {
-        gridView=(NoScrollGridView)findViewById(R.id.gridView);
+        gridView = (NoScrollGridView) findViewById(R.id.gridView);
         gridView.setNumColumns(Constant.TAB_Number);
-        List<Map<String,String>>list=new ArrayList<>();
-         adapter=new MainTabAdapter(context,list);
+        List<Map<String, String>> list = new ArrayList<>();
+        adapter = new MainTabAdapter(context, list);
         gridView.setAdapter(adapter);
     }
 
@@ -78,5 +101,12 @@ public class MainActivity extends BaseActivity {
         }
         hideTag = tag;
         mFragmentTransaction.commit();
+    }
+
+    public class LocationListenner implements BDLocationListener {
+        public void onReceiveLocation(BDLocation location) {
+            Toast(location.getAddrStr());
+            mLocClient.stop();
+        }
     }
 }
