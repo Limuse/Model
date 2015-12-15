@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#000000"
+    android:orientation="vertical">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#cccccc" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="#ffffff"
+        android:paddingBottom="1dp"
+        android:paddingTop="1dp">
+
+        <com.custom.NoScrollGridView
+            android:id="@+id/gridView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:cacheColorHint="@color/app_line"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:horizontalSpacing="0.8dp"
+            android:numColumns="5"
+            android:overScrollMode="never"
+            android:verticalSpacing="0.8dp"></com.custom.NoScrollGridView>
+    </RelativeLayout>
+</LinearLayout>
