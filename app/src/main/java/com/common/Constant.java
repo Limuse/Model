@@ -7,6 +7,7 @@ public class Constant {
     public static  int TAB_Number = 5;
     public static  String BASE_URL = "";
     public static  String COLOR_BAR = "#000000";
-    public static  String COLOR_TAB_DEFAULT = "#ffffff";
-    public static  String COLOR_TAB_PRESS= "#ff9900";
+    public static  String COLOR_TAB = "#f8f8f8";
+    public static  String COLOR_BUTTON= "#ff9900";
+    public static  String COLOR_BUTTON_PRESS= "#90ff9900";
 }

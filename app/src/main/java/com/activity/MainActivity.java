@@ -79,13 +79,12 @@ public class MainActivity extends BaseActivity {
         list.add(new HashMap<String, String>());
         list.add(new HashMap<String, String>());
         list.add(new HashMap<String, String>());
-        list.add(new HashMap<String, String>());
-        list.add(new HashMap<String, String>());
         Constant.TAB_Number=list.size();
     }
 
     private void initView() {
         gridView = (NoScrollGridView) findViewById(R.id.gridView);
+        gridView.setBackgroundColor(Color.parseColor(Constant.COLOR_TAB));
         gridView.setNumColumns(Constant.TAB_Number);
         adapter = new MainTabAdapter(context, list);
         gridView.setAdapter(adapter);

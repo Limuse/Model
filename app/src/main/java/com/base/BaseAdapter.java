@@ -40,8 +40,6 @@ public abstract class BaseAdapter extends android.widget.BaseAdapter {
         initImageLoder();
     }
 
-
-
     private void initImageLoder() {
         options = new DisplayImageOptions.Builder().cacheInMemory(true).showImageOnLoading(R.mipmap.ic_launcher)
                 .showImageOnFail(R.mipmap.ic_launcher)

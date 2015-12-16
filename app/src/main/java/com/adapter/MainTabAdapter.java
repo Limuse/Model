@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 import com.base.BaseAdapter;
 import com.common.Constant;
+import com.nostra13.universalimageloader.core.ImageLoader;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -56,6 +57,7 @@ public class MainTabAdapter extends BaseAdapter {
         }else {
             viewHolder.imageView.setImageResource(R.mipmap.mainn);
         }
+
         return convertView;
     }
 
