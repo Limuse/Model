@@ -5,10 +5,11 @@ import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.base.BaseAdapter;
 import com.common.Constant;
 
 import java.util.ArrayList;
@@ -25,10 +26,12 @@ public class MainTabAdapter extends BaseAdapter {
     private List<Map<String, String>> list;
     private List<Boolean> isChecd = new ArrayList<>();
 
+
     public MainTabAdapter(Context context, List<Map<String, String>> list) {
+        super.BaseAdapter(context,list);
         this.context = context;
         this.list = list;
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < list.size(); i++) {
             if (i == 0) {
                 isChecd.add(i, true);
             } else {
@@ -37,33 +40,6 @@ public class MainTabAdapter extends BaseAdapter {
         }
     }
 
-    public void setChecdIndex(int index){
-        for (int i = 0; i < 5; i++) {
-            if (i == index) {
-                isChecd.add(i, true);
-            } else {
-                isChecd.add(i, false);
-            }
-        }
-        notifyDataSetChanged();
-    }
-
-    @Override
-    public int getCount() {
-        return 5;
-    }
-
-    @Override
-    public Object getItem(int position) {
-        return null;
-    }
-
-    @Override
-    public long getItemId(int position) {
-        return 0;
-    }
-
-    @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         ViewHolder viewHolder;
         if (convertView == null) {
@@ -83,8 +59,18 @@ public class MainTabAdapter extends BaseAdapter {
         return convertView;
     }
 
-
     private class ViewHolder {
         ImageView imageView;
+    }
+
+    public void setChecdIndex(int index){
+        for (int i = 0; i <  list.size(); i++) {
+            if (i == index) {
+                isChecd.add(i, true);
+            } else {
+                isChecd.add(i, false);
+            }
+        }
+        notifyDataSetChanged();
     }
 }

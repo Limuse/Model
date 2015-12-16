@@ -24,11 +24,14 @@ public class Init {
         Fragment[] fragments;
         switch (count) {
             case 1:
-                break;
+                fragments = new Fragment[]{fragment1};
+                return fragments;
             case 2:
-                break;
+                fragments = new Fragment[]{fragment1,fragmentMy};
+                return fragments;
             case 3:
-                break;
+                fragments = new Fragment[]{fragment1,fragment2,fragmentMy};
+                return fragments;
             case 4:
                 fragments = new Fragment[]{fragment1,fragment2,fragment3,fragmentMy};
                 return fragments;

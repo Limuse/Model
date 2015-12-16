@@ -21,7 +21,7 @@ import huisou.model.R;
 /**
  * Created by admin on 2015/12/8.
  */
-public class BaseActivity extends FragmentActivity {
+public abstract class BaseActivity extends FragmentActivity {
     protected Toolbar toolbar;
     protected DisplayImageOptions options;
     protected Context context;
@@ -35,7 +35,7 @@ public class BaseActivity extends FragmentActivity {
         initImageLoder();
     }
 
-    public void setView(int layoutId, Boolean isShowBar) {
+    protected void  setView(int layoutId, Boolean isShowBar) {
         if (isShowBar) {
             viewGroup = (ViewGroup) getLayoutInflater().inflate(R.layout.activity_base, null);
             View v = getLayoutInflater().inflate(layoutId, viewGroup, false);
@@ -48,7 +48,7 @@ public class BaseActivity extends FragmentActivity {
         }
     }
 
-    private void initImageLoder() {
+    private void  initImageLoder() {
         options = new DisplayImageOptions.Builder().cacheInMemory(true).showImageOnLoading(R.mipmap.ic_launcher)
                 .showImageOnFail(R.mipmap.ic_launcher)
                 .cacheOnDisk(true).bitmapConfig(Bitmap.Config.RGB_565)
@@ -92,4 +92,6 @@ public class BaseActivity extends FragmentActivity {
         intent.putExtras(bundle);
         startActivity(intent);
     }
+
+
 }

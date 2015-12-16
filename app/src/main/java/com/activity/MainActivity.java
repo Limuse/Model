@@ -20,6 +20,7 @@ import com.common.Init;
 import com.custom.NoScrollGridView;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -41,13 +42,13 @@ public class MainActivity extends BaseActivity {
     private LocationClientOption option = new LocationClientOption();
     private LocationListenner locationListenner = new LocationListenner();
 
+    private  List<Map<String, String>> list = new ArrayList<>();
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setView(R.layout.activity_main, false);
-        initView();
         initData();
+        initView();
         initClick();
-
         location();
     }
 
@@ -73,17 +74,24 @@ public class MainActivity extends BaseActivity {
         });
     }
 
+
     private void initData() {
-        fragments = Init.setHomeFragment(Constant.TAB_Number);
-        switchFragment(fragments[0], 0 + "");
+        list.add(new HashMap<String, String>());
+        list.add(new HashMap<String, String>());
+        list.add(new HashMap<String, String>());
+        list.add(new HashMap<String, String>());
+        list.add(new HashMap<String, String>());
+        Constant.TAB_Number=list.size();
     }
 
     private void initView() {
         gridView = (NoScrollGridView) findViewById(R.id.gridView);
         gridView.setNumColumns(Constant.TAB_Number);
-        List<Map<String, String>> list = new ArrayList<>();
         adapter = new MainTabAdapter(context, list);
         gridView.setAdapter(adapter);
+
+        fragments = Init.setHomeFragment(Constant.TAB_Number);
+        switchFragment(fragments[0], 0 + "");
     }
 
     public void switchFragment(Fragment fragment, String tag) {
