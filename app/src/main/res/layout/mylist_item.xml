@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_backgroud"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/orders"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/app_item_h"
+        android:background="@drawable/btn_press"
+        android:clickable="true">
+
+        <ImageView
+            android:id="@+id/img_my"
+            android:layout_width="@dimen/app_item_image_h"
+            android:layout_height="@dimen/app_item_image_h"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/app_item_margin_left"
+            android:layout_marginRight="5dp"
+            android:background="@mipmap/person_bg" />
+
+        <TextView
+            android:id="@+id/tv_my"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="4dp"
+            android:layout_toRightOf="@+id/img_my"
+            android:text=""
+            android:textColor="@color/app_dark"
+            android:textSize="@dimen/app_text_normal" />
+
+        <ImageView
+            android:layout_width="@dimen/app_item_image_h"
+            android:layout_height="@dimen/app_item_image_h"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/app_item_margin_left"
+            android:src="@mipmap/right_to" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/app_lyview"
+        android:background="@color/app_line" />
+
+</LinearLayout>

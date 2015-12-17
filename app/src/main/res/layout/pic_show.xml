@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@null"
+    android:clipToPadding="false"
+    android:fitsSystemWindows="false"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/btn_play"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/app_item_margin_left"
+        android:layout_marginRight="@dimen/app_item_margin_left"
+        android:background="@drawable/btn_wt"
+        android:text="拍照"
+        android:textColor="@color/app_red"
+        android:textSize="18sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginLeft="19dp"
+        android:layout_marginRight="19dp"
+        android:background="@color/app_line" />
+
+    <Button
+        android:id="@+id/btn_pics"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/app_item_margin_left"
+        android:layout_marginRight="@dimen/app_item_margin_left"
+        android:background="@drawable/btn_wt"
+        android:text="从相册选择"
+        android:textColor="@color/app_red"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/btn_cncel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="0.5dp"
+        android:layout_marginLeft="@dimen/app_item_margin_left"
+        android:layout_marginRight="@dimen/app_item_margin_left"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/btn_wt"
+        android:text="取消"
+        android:textColor="@color/app_red"
+        android:textSize="18sp" />
+
+</LinearLayout>

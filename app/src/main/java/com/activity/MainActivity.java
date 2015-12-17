@@ -10,14 +10,21 @@ import android.widget.AdapterView;
 import android.widget.GridView;
 
 import com.adapter.MainTabAdapter;
+import com.alibaba.fastjson.JSON;
 import com.baidu.location.BDLocation;
 import com.baidu.location.BDLocationListener;
 import com.baidu.location.LocationClient;
 import com.baidu.location.LocationClientOption;
 import com.base.BaseActivity;
 import com.common.Constant;
+import com.common.Http;
 import com.common.Init;
 import com.custom.NoScrollGridView;
+import com.loopj.android.http.RequestParams;
+import com.loopj.android.http.TextHttpResponseHandler;
+import com.nostra13.universalimageloader.core.ImageLoader;
+
+import org.apache.http.Header;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -50,9 +57,25 @@ public class MainActivity extends BaseActivity {
         initView();
         initClick();
         location();
+//            Log("sas");
+//        Toast("sas");
+//        StartActivity(MainActivity.class);
+//        RequestParams requestParams=new RequestParams();
+//        requestParams.put("aa","aaa");
+//        Http.post("sss", requestParams, new TextHttpResponseHandler() {
+//            public void onFailure(int i, Header[] headers, String s, Throwable throwable) {
+//
+//            }
+//            public void onSuccess(int i, Header[] headers, String s) {
+//                entity= JSON.parseObject(s,entit.class);
+//
+//            }
+//        });
+
     }
 
     private void location() {
+        //ImageLoader.getInstance().displayImage(context,"",View);
         mLocClient = new LocationClient(getApplicationContext());
         mLocClient.registerLocationListener(locationListenner);
         option.setOpenGps(true);

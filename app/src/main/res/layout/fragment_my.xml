@@ -1,14 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/app_backgroud"
+    android:fadingEdge="none"
+    android:overScrollMode="never"
+    android:scrollbarStyle="outsideOverlay"
+    android:scrollbars="none">
 
-    android:orientation="vertical">
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="mmmmmmmm"
-        android:textSize="50sp" />
-</LinearLayout>
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="210dp"
+            android:background="@mipmap/person_bg"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/myself_image_rl"
+                android:layout_width="72dp"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true">
+
+
+                <com.custom.CircleImageView
+                    android:id="@+id/myself_image"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:layout_alignParentRight="true"
+                    android:onClick="true"
+                    android:src="@mipmap/person_bg"
+                    app:border_color="@android:color/transparent"
+                    app:border_width="0.5dp" />
+
+                <TextView
+                    android:id="@+id/myself_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/myself_image"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="6dp"
+                    android:clickable="true"
+                    android:maxEms="10"
+                    android:singleLine="true"
+                    android:text="12312323"
+                    android:textColor="@color/app_backgroud" />
+            </RelativeLayout>
+
+            <ImageView
+                android:id="@+id/img_set"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="8dp"
+                android:background="@mipmap/person_bg" />
+        </RelativeLayout>
+
+        <com.custom.IlistView
+            android:id="@+id/mylist"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:cacheColorHint="#00000000"
+            android:clickable="true"
+            android:divider="@null"
+            android:fadingEdge="none"
+            android:focusable="true"
+            android:listSelector="#00000000"
+            android:scrollbars="none" />
+
+
+
+        <com.custom.IlistView
+            android:id="@+id/mylist2"
+            android:layout_marginTop="@dimen/app_lycard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:cacheColorHint="#00000000"
+            android:clickable="true"
+            android:divider="@null"
+            android:fadingEdge="none"
+            android:focusable="true"
+            android:listSelector="#00000000"
+            android:scrollbars="none" />
+    </LinearLayout>
+</ScrollView>

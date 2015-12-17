@@ -6,4 +6,9 @@
     <dimen name="app_text_normal">14sp</dimen>
     <dimen name="app_text_big">16sp</dimen>
     <dimen name="app_text_title">18sp</dimen>
+    <dimen name="app_item_h">48dp</dimen>
+    <dimen name="app_item_margin_left">15dp</dimen>
+    <dimen name="app_item_image_h">17dp</dimen>
+    <dimen name="app_lyview">0.5dp</dimen>
+    <dimen name="app_info_img">56dp</dimen>
 </resources>

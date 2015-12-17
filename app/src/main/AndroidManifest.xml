@@ -15,17 +15,15 @@
         <service
             android:name="com.baidu.location.f"
             android:enabled="true"
-            android:process=":remote" >
+            android:process=":remote">
             <intent-filter>
-                <action android:name="com.baidu.location.service_v2.2" >
-                </action>
+                <action android:name="com.baidu.location.service_v2.2"></action>
             </intent-filter>
         </service>
 
         <meta-data
             android:name="com.baidu.lbsapi.API_KEY"
             android:value="8kwx3DEt7zK7o1noPeGx2UzW" />
-
 
 
         <activity
@@ -37,6 +35,38 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!--完善资料-->
+        <activity
+            android:name="com.activity.MyInfo"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait"></activity>
+        <!--关于app-->
+        <activity
+            android:name="com.activity.AboutApp"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait"></activity>
+        <!--反馈-->
+        <activity
+            android:name="com.activity.Advices"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait"></activity>
+        <!--分享类-->
+        <activity
+            android:name="com.activity.ShareType"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait"></activity>
+        <!--平常类-->
+        <activity
+            android:name="com.activity.UsualyType"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait"></activity>
+        <!--编辑类-->
+        <activity
+            android:name="com.activity.WriteType"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait"></activity>
+
     </application>
 
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"></uses-permission>

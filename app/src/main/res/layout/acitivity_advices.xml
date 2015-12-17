@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/app_line" />
+
+    <EditText
+        android:id="@+id/et_backa"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginLeft="@dimen/app_item_margin_left"
+        android:layout_marginRight="@dimen/app_item_margin_left"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/edt_bk"
+        android:gravity="top"
+        android:hint="请尽量详细描述反馈，我们回第一时间帮您解决"
+        android:paddingLeft="@dimen/app_item_margin_left"
+        android:paddingRight="@dimen/app_item_margin_left"
+        android:paddingTop="@dimen/app_item_margin_left"
+        android:textSize="@dimen/app_text_big" />
+
+    <EditText
+        android:id="@+id/ed_fid"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginLeft="@dimen/app_item_margin_left"
+        android:layout_marginRight="@dimen/app_item_margin_left"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/edt_bk"
+        android:hint="请留下您的手机号码"
+        android:paddingLeft="@dimen/app_item_margin_left"
+        android:paddingRight="@dimen/app_item_margin_left"
+        android:textSize="@dimen/app_text_big" />
+</LinearLayout>
