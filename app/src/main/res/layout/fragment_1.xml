@@ -5,9 +5,11 @@
     android:background="@color/app_backgroud"
     android:orientation="vertical">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+    <com.custom.FilletButton
+        android:id="@+id/image"
+        android:layout_gravity="center"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:text="1111111111"
         android:textSize="50sp" />
 

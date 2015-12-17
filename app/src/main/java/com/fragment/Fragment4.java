@@ -13,7 +13,6 @@ import huisou.model.R;
  * Created by admin on 2015/12/14.
  */
 public class Fragment4 extends BaseFragment {
-    private View parentView;
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
